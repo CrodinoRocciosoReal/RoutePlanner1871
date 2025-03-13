@@ -202,3 +202,40 @@ button:hover {
   background: white;
   border-radius: 4px;
 }
+
+.vehicle-type-indicator {
+  background: var(--primary);
+  color: var(--background);
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-top: 1rem;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.loading-indicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(30, 30, 30, 0.9); /* Grigio Scuro con trasparenza */
+  color: var(--text);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000;
+  text-align: center;
+  border: 1px solid var(--primary);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Stili per errori e avvisi con il nuovo Rosso Sportivo */
+.error-message, .warning-message {
+  color: #FF4500;
+  background-color: rgba(255, 69, 0, 0.1);
+  padding: 15px;
+  margin: 15px 0;
+  border-left: 5px solid #FF4500;
+  border-radius: 0 8px 8px 0;
+  font-size: 1.05rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

@@ -25,7 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
         calculateBtn.addEventListener('click', () => {
             if (addressInput && addressInput.value.trim()) {
                 localStorage.setItem('indirizzi', addressInput.value);
-                localStorage.setItem('transportMode', transportMode.value);
+                
+                // Map custom transport modes to OSRM compatible profiles
+                let osmrProfile = transportMode.value;
+                if (transportMode.value === "driving-hgv" || transportMode.value === "driving-lgv") {
+                    // OSRM public API doesn't directly support HGV/LGV profiles
+                    // For now, we'll use the "driving" profile with a special flag
+                    osmrProfile = "driving";
+                    localStorage.setItem('isHeavyVehicle', 'true');
+                } else {
+                    localStorage.removeItem('isHeavyVehicle');
+                }
+                
+                localStorage.setItem('transportMode', osmrProfile);
                 window.location.href = 'map.html';
             }
         });
