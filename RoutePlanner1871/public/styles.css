@@ -20,27 +20,6 @@ body {
   line-height: 1.6;
 }
 
-body.splash {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-}
-
-body.splash picture {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-body.splash img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
 header {
   background: var(--surface);
   padding: 1rem;
